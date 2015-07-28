@@ -23,48 +23,6 @@ namespace IMChatApp.Models
     }
 
 
-    public class Room
-    {
-        public int id { get; set; }
-        public string name { get; set; }
-        public List<user> users { get; set; }
-        public string type { get; set; }
-        public string welcomeMessage { get; set; }
-        //public string id { get; set; }
-        //id, name, users, type, welcomeMessage
-       // ChatAppEntities Db = new ChatAppEntities();
-        public Room() {
-
-            if (rooms.Count == 0)
-            {
-              //  List<RoomMaster> listroomMaster = Db.RoomMasters.ToList();
-              //  rooms =Mappers.RoomMap(Db.RoomMasters.ToList());
-            }
-        }
-
-        public static List<Room> rooms = new List<Room>();
-        public static void InitializeRoom()
-        {
-            List<Room> rooms = new List<Room>();
-            rooms.Add(new Room { id = 1, name = "India", welcomeMessage = "Welcome to India Room ", type = "Normal", users = null });
-            rooms.Add(new Room { id = 2, name = "Canada", welcomeMessage = "Welcome to India Room ", type = "Normal", users = null });
-            rooms.Add(new Room { id = 3, name = "Pakistan", welcomeMessage = "Welcome to Pakistan Room ", type = "Normal", users = null });
-            rooms.Add(new Room { id = 4, name = "USA", welcomeMessage = "Welcome to USA Room ", type = "Normal", users = null });
-            rooms.Add(new Room { id = 5, name = "UK", welcomeMessage = "Welcome to UK Room ", type = "Normal", users = null });
-            rooms.Add(new Room { id = 6, name = "C sharp", welcomeMessage = "Welcome to C sharp Room ", type = "Normal", users = null });
-            rooms.Add(new Room { id = 7, name = "PHP", welcomeMessage = "Welcome to PHP Room ", type = "Normal", users = null });
-            rooms.Add(new Room { id = 8, name = "ASP", welcomeMessage = "Welcome to ASP Room ", type = "Normal", users = null });
-            rooms.Add(new Room { id = 9, name = "MVC", welcomeMessage = "Welcome to MVC Room ", type = "Normal", users = null });
-
-        }
-
-        public void AddUserToList(string name, string room)
-        {
-            Room r = rooms.Where(x => x.name == "room").Single();
-            // update from data base .
-            r.users.Add(new user { name = name });
-        }
-    }
     public class user
     {
         //id, name, type, fontName, fontSize, fontColor, sex, age, friendsList, status, memberType
@@ -105,10 +63,4 @@ namespace IMChatApp.Models
     {
         BAN, MUTE, KICK
     }
-    public class UsersInRoom
-    {
-    public int id { get; set; }
-    public string RoomName { get; set; }
-    public int usersCount { get; set; }
-    }
-}
+  }

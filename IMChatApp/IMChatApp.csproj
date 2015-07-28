@@ -172,12 +172,14 @@
     <Content Include="ChatScripts\App.js" />
     <Content Include="ChatScripts\Controlers.js" />
     <Content Include="ChatScripts\Factories.js" />
+    <Content Include="Content\angular-flash.css" />
     <Content Include="Content\bootstrap.icons.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\angular-flash.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\HelpPage\Views\Web.config" />

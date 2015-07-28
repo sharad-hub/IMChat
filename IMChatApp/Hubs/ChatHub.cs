@@ -23,7 +23,7 @@ namespace IMChatApp.Hubs
         }
         static readonly HashSet<string> Rooms = new HashSet<string>();
         static List<user> loggedInUsers = new List<user>();
-        static List<Room> roomsWiseUser = new List<Room>();
+        //static List<Room> roomsWiseUser = new List<Room>();
         public string Login(string name)
         {           
             var user = new user { name = name, ConnectionId = Context.ConnectionId, age = 20, avator = "", id = 1, sex = "Male", memberType = "Re+gistered", fontColor = "red", status = Status.Online };

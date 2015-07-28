@@ -1,6 +1,6 @@
 ﻿(function () {
     'use strict'
-    app.controller("chatController", function ($scope, $rootScope, signalR) {
+    app.controller("chatController", function ($scope, $rootScope, signalR, Flash) {
     $scope.$parent.UserName = "";
     $scope.rooms = [];// RoomFactory.Rooms;
     $scope.$parent.UserName = prompt("Enter unique name :");
@@ -29,7 +29,8 @@
                $scope.$apply();
             }        
     });
-    
+
+  //  Flash.add('success', message, 'custom-class')
     signalR.Login($scope.$parent.UserName);
     ///////////////// server
     
@@ -79,8 +80,14 @@
         });
         signalR.NewOfflineUser(function (user) {
             $.each($scope.OnlineUsers, function (i) {
-                if ($scope.OnlineUsers[i].name === user.name && $scope.OnlineUsers[i].ConnectionId==user.ConnectionId) {
+                if ($scope.OnlineUsers[i].name === user.name && $scope.OnlineUsers[i].ConnectionId==user.ConnectionId) 
+                    {
                     $scope.OnlineUsers.splice(i, 1);
+                var message = '<strong> !!</strong>'+user.name +' left the chat ';
+                debugger;
+                Flash.create('success', message, 'custom-class');
+                  
+                   // Flash.add('success', user.name+ 'is logged off' , 'custom-class')
                     return false;
                 }
             });
@@ -98,11 +105,7 @@
             $scope.$apply();
         };
         signalR.RecievingPrivateMessage(function (toname,fromname, msg) {
-            console.log(msg);
-            console.log(toname + " :toname");
-            console.log(fromname + " :fromname");
-            debugger;
-            if ($scope.ShowPrivateWindow == false) {
+           if ($scope.ShowPrivateWindow == false) {
                 $scope.ShowPrivateWindow = true;
             }
            // var msgBdy = { room: r, msgx: { message: msg.message, sender: msg.sender, css: msg.css } };
