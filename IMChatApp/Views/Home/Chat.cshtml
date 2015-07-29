@@ -45,196 +45,17 @@
         float:left;
 
     }
-    .alert {
-        padding: 15px;
-        margin-bottom: 20px;
-        border: 1px solid transparent;
-        border-radius: 4px;
-    }
-
-        .alert h4 {
-            margin-top: 0;
-            color: inherit;
-        }
-
-        .alert .alert-link {
-            font-weight: bold;
-        }
-
-        .alert > p, .alert > ul {
-            margin-bottom: 0;
-        }
-
-            .alert > p + p {
-                margin-top: 5px;
-            }
-
-    .alert-dismissable, .alert-dismissible {
-        padding-right: 35px;
-    }
-
-        .alert-dismissable .close, .alert-dismissible .close {
-            position: relative;
-            top: -2px;
-            right: -21px;
-            color: inherit;
-        }
-
-    .alert-success {
-        color: #3c763d;
-        background-color: #dff0d8;
-        border-color: #d6e9c6;
-    }
-
-        .alert-success hr {
-            border-top-color: #c9e2b3;
-        }
-
-        .alert-success .alert-link {
-            color: #2b542c;
-        }
-
-    .alert-info {
-        color: #31708f;
-        background-color: #d9edf7;
-        border-color: #bce8f1;
-    }
-
-        .alert-info hr {
-            border-top-color: #a6e1ec;
-        }
-
-        .alert-info .alert-link {
-            color: #245269;
-        }
-
-    .alert-warning {
-        color: #8a6d3b;
-        background-color: #fcf8e3;
-        border-color: #faebcc;
-    }
-
-        .alert-warning hr {
-            border-top-color: #f7e1b5;
-        }
-
-        .alert-warning .alert-link {
-            color: #66512c;
-        }
-
-    .alert-danger {
-        color: #a94442;
-        background-color: #f2dede;
-        border-color: #ebccd1;
-    }
-
-        .alert-danger hr {
-            border-top-color: #e4b9c0;
-        }
-
-        .alert-danger .alert-link {
-            color: #843534;
-        }
-
-    .close {
-        float: right;
-        font-size: 21px;
-        font-weight: bold;
-        line-height: 1;
-        color: #000;
-        text-shadow: 0 1px 0 #fff;
-        filter: alpha(opacity=20);
-        opacity: .2;
-    }
-
-        .close:hover, .close:focus {
-            color: #000;
-            text-decoration: none;
-            cursor: pointer;
-            filter: alpha(opacity=50);
-            opacity: .5;
-        }
-
-    button.close {
-        -webkit-appearance: none;
-        padding: 0;
-        cursor: pointer;
-        background: transparent;
-        border: 0;
-    }
-
-    .sr-only {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: -1px;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-        border: 0;
-    }
-
-    .alertIn, .alertOut {
-        -webkit-transition: -webkit-transform 0.22s cubic-bezier(0.25, 0, 0.25, 1), opacity 0.22s cubic-bezier(0.25, 0, 0.25, 1);
-        -moz-transition: -moz-transform 0.22s cubic-bezier(0.25, 0, 0.25, 1), opacity 0.22s cubic-bezier(0.25, 0, 0.25, 1);
-        -o-transition: -o-transform 0.22s cubic-bezier(0.25, 0, 0.25, 1), opacity 0.22s cubic-bezier(0.25, 0, 0.25, 1);
-        transition: transform 0.22s cubic-bezier(0.25, 0, 0.25, 1), opacity 0.22s cubic-bezier(0.25, 0, 0.25, 1);
-    }
-
-        .alertIn.ng-hide-remove, .alertOut.ng-hide-add.ng-hide-add-active {
-            opacity: 0;
-            -webkit-transform: translate3d(100px, 0px, 0px);
-            transform: translate3d(100px, 0px, 0px);
-            display: block !important;
-        }
-
-            .alertOut.ng-hide-add, .alertIn.ng-hide-remove.ng-hide-remove-active {
-                opacity: 1;
-                display: block !important;
-                -webkit-transform: translate3d(0px, 0px, 0px);
-                transform: translate3d(0px, 0px, 0px);
-            }
-
-    /* Demo */
+   
   
-    .demo {
-        width: 600px;
-        overflow: hidden;
-        margin: 40px auto 20px auto;
-        padding: 20px;
-        border: 1px solid #e6e6e6;
-        background-color: #FFF;
-        border-radius: 4px;
-        height: 190px;
-        position: relative;
-    }
-
-    .btn {
-        margin: 10px 5px 20px 5px;
-    }
-
-    h3 {
-        margin: 5px 0 10px 5px;
-        font-size: 14px;
-        color: #777;
-    }
-
-    .link {
-        position: absolute;
-        right: 20px;
-        top: 20px;
-    }
 </style>
 
 
 <div class="row">
 
-    <div ng-app="ChatApp" ng-controller="chatController">
-        
+    <div ng-app="ChatApp" ng-controller="chatController">        
             <div id="OnlineUsers">
                 <div class="container">
-                    <div class="row">
-                        @*<div class="col-md-2">*@
+                    <div class="row">                       
                         <div>
                             <div class="panel panel-primary">
                                 <div class="panel-heading">
@@ -293,48 +114,48 @@
                     <div class="row">
 
                         <div>
-                            <span class="glyphicon glyphicon-comment"></span> {{UserInPrivateChat.name}}
-                            <div class="btn-group pull-right">
-                                <button type="button" class="btn btn-default btn-xs" ng-click="ClosePrivateWindow()">
-                                    <span class="glyphicon glyphicon-remove"> </span>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="panel-body" style="overflow-y:scroll; min-height:200px; max-height:200px;">
-                            <ul class="chat">
-                                <div class="panel panel-primary">
-                                    <div class="panel-heading">
-                                        <li ng-class="(msg.from == UserInPrivateChat.name )? 'left' : 'right'" class="clearfix" ng-repeat="msg in PrivateMessages | filter:({to: UserInPrivateChat.ConnectionId})">
-                                            <span class="chat-img" ng-class="(msg.from == UserInPrivateChat.name )? 'pull-left' : 'pull-right'">
-                                                <img ng-src="{{(msg.from == UserInPrivateChat.name )? 'http://placehold.it/40/FA6F57/fff&text=OT' : 'http://placehold.it/40/55C1E7/fff&text=ME' }} " alt="User Avatar" />
-                                            </span>
-                                            <div class="chat-body clearfix">
-                                                <div class="header">
-                                                    <strong class="primary-font">{{msg.from}}</strong> <small ng-class="(msg.from == UserInPrivateChat.name )? 'pull-left' : 'pull-right'"
-                                                                                                              class="text-muted">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <span class="glyphicon glyphicon-comment"></span> {{UserInPrivateChat.name}}
+                                    <div class="btn-group pull-right">
+                                        <button type="button" class="btn btn-default btn-xs" ng-click="ClosePrivateWindow()">
+                                            <span class="glyphicon glyphicon-remove"> </span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="panel-body" style="overflow-y:scroll; min-height:200px; max-height:200px;">
+                                    <ul class="chat">                                       
+                                                <li ng-class="(msg.from == UserInPrivateChat.name )? 'left' : 'right'" class="clearfix" ng-repeat="msg in PrivateMessages | filter:({to: UserInPrivateChat.ConnectionId})">
+                                                    <span class="chat-img" ng-class="(msg.from == UserInPrivateChat.name )? 'pull-left' : 'pull-right'">
+                                                        <img ng-src="{{(msg.from == UserInPrivateChat.name )? 'http://placehold.it/40/FA6F57/fff&text=OT' : 'http://placehold.it/40/55C1E7/fff&text=ME' }} " alt="User Avatar" />
+                                                    </span>
+                                                    <div class="chat-body clearfix">
+                                                        <div class="header">
+                                                            <strong class="primary-font">{{msg.from}}</strong> <small ng-class="(msg.from == UserInPrivateChat.name )? 'pull-left' : 'pull-right'"
+                                                                                                                      class="text-muted">
 
-                                                    </small>
-                                                </div>
-                                                <p>
-                                                    {{msg.message}}
-                                                </p>
-                                            </div>
-                                            <hr />
-                                        </li>
-                            </ul>
-                        </div>
-                        <div class="panel-footer">
-                            <div class="input-group">
-                                <input id="btn-input" type="text" class="form-control input-sm" ng-model="pvtmessage" placeholder="Type your message here..." />
-                                <span class="input-group-btn">
-                                    <button class="btn btn-warning btn-sm" id="btn-chat" ng-click="SendPrivateMessage()">
-                                        Send
-                                    </button>
-                                </span>
+                                                            </small>
+                                                        </div>
+                                                        <p>
+                                                            {{msg.message}}
+                                                        </p>
+                                                    </div>
+                                                    <hr />
+                                                </li>
+                                    </ul>
+                                </div>
+                                <div class="panel-footer">
+                                    <div class="input-group">
+                                        <input id="btn-input" type="text" class="form-control input-sm" ng-model="pvtmessage" placeholder="Type your message here..." />
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-warning btn-sm" id="btn-chat" ng-click="SendPrivateMessage()">
+                                                Send
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
             </div>
 
         <div flash-message="7000" style="z-index:400 ; position:absolute; bottom:0px; left:1px;"></div>
