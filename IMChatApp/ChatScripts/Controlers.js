@@ -1,6 +1,6 @@
 ﻿(function () {
     'use strict'
-    app.controller("chatController", function ($scope, $rootScope, signalR, Flash) {
+    app.controller("chatController", function ($scope, $rootScope, signalR,Flash) {
     $scope.$parent.UserName = "";
     $scope.rooms = [];// RoomFactory.Rooms;
     $scope.$parent.UserName = prompt("Enter unique name :");
@@ -77,18 +77,21 @@
         signalR.NewOnlineUser(function (user) {
             $scope.OnlineUsers.push(user);
             $scope.$apply();
+            var message = '<strong> !!</strong>' + user.name + ' in online';
+            debugger;
+            Flash.create('success', message, 'custom-class');
+
+
         });
+            
         signalR.NewOfflineUser(function (user) {
             $.each($scope.OnlineUsers, function (i) {
                 if ($scope.OnlineUsers[i].name === user.name && $scope.OnlineUsers[i].ConnectionId==user.ConnectionId) 
                     {
                     $scope.OnlineUsers.splice(i, 1);
-                var message = '<strong> !!</strong>'+user.name +' left the chat ';
+                    var message = '<strong> !! ' + user.name + '</strong> left the chat ';
                 debugger;
-                Flash.create('success', message, 'custom-class');
-                  
-                   // Flash.add('success', user.name+ 'is logged off' , 'custom-class')
-                    return false;
+                Flash.create('danger', message); 
                 }
             });
            // $scope.OnlineUsers.push(user);
