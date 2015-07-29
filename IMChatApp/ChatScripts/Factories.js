@@ -16,7 +16,12 @@
             connection.done(function () {
                 $hub.server.sendPrivateMessage(touser, message);
             });
-        },        
+        },
+        UpdateStatus: function (status) {
+            connection.done(function () {
+                $hub.server.updateStatus(status);
+            });
+        },
         ////////////////////// CLIENT METHODS////////////////////            
         joinroom: function (callback) {
             $hub.client.joinroom = callback;
@@ -38,7 +43,12 @@
         },
         NewOfflineUser: function (callback) {
             $hub.client.newOfflineUser = callback;
-        } 
+        },
+        StatusChanged: function (callback) {
+            $hub.client.statusChanged = callback;
+        }
+
+        
     }
     return signalR;
 });

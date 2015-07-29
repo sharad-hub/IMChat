@@ -10,7 +10,7 @@ namespace IMChatApp.Models
     {
         Online,
         Away,
-        Bussy,
+        Busy,
         Offline
     }
     public class Css
@@ -36,7 +36,7 @@ namespace IMChatApp.Models
         public string fontColor { get; set; }
         public string sex { get; set; }
         public int age { get; set; }
-        public Status status { get; set; }
+        public string status { get; set; }
         public string memberType { get; set; }
         public string avator { get; set; }
 

@@ -26,7 +26,7 @@ namespace IMChatApp.Hubs
         //static List<Room> roomsWiseUser = new List<Room>();
         public string Login(string name)
         {           
-            var user = new user { name = name, ConnectionId = Context.ConnectionId, age = 20, avator = "", id = 1, sex = "Male", memberType = "Re+gistered", fontColor = "red", status = Status.Online };
+            var user = new user { name = name, ConnectionId = Context.ConnectionId, age = 20, avator = "", id = 1, sex = "Male", memberType = "Re+gistered", fontColor = "red", status = Status.Online.ToString() };
             Clients.Caller.rooms(Rooms.ToArray());
             Clients.Caller.setInitial(Context.ConnectionId, name);
             var oSerializer = new System.Web.Script.Serialization.JavaScriptSerializer();
@@ -47,6 +47,14 @@ namespace IMChatApp.Hubs
                 Clients.Client(toUserId).sendPrivateMessage(fromUserId, fromUser.name, message);
                 Clients.Caller.sendPrivateMessage(toUserId, fromUser.name, message);
             }
+        }
+        public void UpdateStatus(string status)
+        {
+            string userId = Context.ConnectionId;
+            loggedInUsers.FirstOrDefault(x => x.ConnectionId == userId).status =status;
+            //var fromUser = loggedInUsers.FirstOrDefault(x => x.ConnectionId == fromUserId);                          
+            Clients.Others.statusChanged(userId,status);
+            
         }
         public override System.Threading.Tasks.Task OnDisconnected(bool stopCalled)
         {

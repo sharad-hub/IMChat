@@ -74,6 +74,9 @@
             console.log($scope.OnlineUsers);
             $scope.$apply();
         });
+        $scope.ChangeStatus = function (status) {
+            signalR.UpdateStatus(status);
+        }
         signalR.NewOnlineUser(function (user) {
             $scope.OnlineUsers.push(user);
             $scope.$apply();
@@ -107,6 +110,16 @@
             console.log($scope.OnlineUsers);    +
             $scope.$apply();
         };
+        signalR.StatusChanged(function (connectionId, status)
+        {
+            $.each($scope.OnlineUsers, function (i) {
+                if ($scope.OnlineUsers[i].ConnectionId === connectionId) {
+                    $scope.OnlineUsers[i].status = status;                    
+                }
+            });
+            // $scope.OnlineUsers.push(user);
+            $scope.$apply();
+        });
         signalR.RecievingPrivateMessage(function (toname,fromname, msg) {
            if ($scope.ShowPrivateWindow == false) {
                 $scope.ShowPrivateWindow = true;

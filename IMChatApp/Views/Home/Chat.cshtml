@@ -67,19 +67,19 @@
                                         </button>
                                         <ul class="dropdown-menu slidedown">
                                             <li>
-                                                <a href="">
+                                                <a href="" ng-click="ChangeStatus('Online')">
                                                     <span class="glyphicon glyphicon-ok-sign">
                                                     </span>Available
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="">
+                                                <a href="" ng-click="ChangeStatus('Busy')">
                                                     <span class="glyphicon glyphicon-remove">
                                                     </span>Busy
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="">
+                                                <a href="" ng-click="ChangeStatus('Away')">
                                                     <span class="glyphicon glyphicon-time"></span>
                                                     Away
                                                 </a>
@@ -97,7 +97,11 @@
                                 <div class="panel-body" style=" min-height:100px; max-height:600px;" ng-class="">
                                     <div class="media" ng-repeat="user in OnlineUsers track by $index">
                                         <div class="media-body">
-                                            <h3 class="media-heading"><strong><a href="#" ng-click="PrivateMessage($index)"><i class=" fa fa-user"></i> {{user.name}}</a></strong></h3>
+                                            <h3 class="media-heading"><strong><a href="#" ng-click="PrivateMessage($index)">
+                                                <i class="fa fa-minus-circle" style="color:red" ng-show="user.status=='Busy'"></i>
+                                                                                  <i class="fa fa-circle" style="color:green" ng-show="user.status=='Online'"> </i> 
+                                                                                  <i class="fa fa-history" style="color:orange" ng-show="user.status=='Away'">  </i>
+                                                  {{user.name}}</a></strong></h3>
                                         </div>
 
                                     </div>
