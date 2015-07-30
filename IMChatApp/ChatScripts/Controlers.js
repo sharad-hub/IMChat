@@ -50,7 +50,7 @@
         $scope.currentprivatemessages = {};
         $scope.pvtmessage = '';
       $scope.OpenPrivatewindow = function (index) {
-        debugger;
+        
         var user = $scope.users[index];
       //  var conId = '#' + user.ConnectionId;
         $scope.ShowPrivateWindow = true;
@@ -60,11 +60,8 @@
       }
   
         $scope.SendPrivateMessage = function ()
-        {
-            //var user = $scope.users[index];
-            //user.ConnectionId;
-            // message // user id // connection id to send message  Message : to , from , msg
-            debugger;
+        {            
+           // debugger;
             signalR.SendPrivateMessage($scope.UserInPrivateChat.ConnectionId, $scope.pvtmessage);
             $scope.pvtmessage = '';
         }
@@ -81,12 +78,8 @@
             $scope.OnlineUsers.push(user);
             $scope.$apply();
             var message = '<strong> !!</strong>' + user.name + ' in online';
-            debugger;
             Flash.create('success', message, 'custom-class');
-
-
-        });
-            
+        });            
         signalR.NewOfflineUser(function (user) {
             $.each($scope.OnlineUsers, function (i) {
                 if ($scope.OnlineUsers[i].name === user.name && $scope.OnlineUsers[i].ConnectionId==user.ConnectionId) 
@@ -99,17 +92,47 @@
             });
            // $scope.OnlineUsers.push(user);
             $scope.$apply();
-        });
-        
+        });        
+        $scope.SkeyPress =function(e) {
+            if (e.which == 13)
+            {
+                $scope.SendPrivateMessage();
+                $scope.usertyping = ''
+            }
+            else if (e.which == 46 || e.which == 8) {
+                signalR.UserTyping($scope.UserInPrivateChat.ConnectionId, 'Deleting..');
+                window.setTimeout(function () {
+                    $scope.usertyping = '';
+                }, 500);
+            }
+            else {              
+                signalR.UserTyping($scope.UserInPrivateChat.ConnectionId, 'Typing..');
+                window.setTimeout(function () {
+                    $scope.usertyping = '';
+                }, 500);
+            }
+        }
        // PrivateMessage($index)
         $scope.PrivateMessage = function (index) {
             debugger;
             var user = $scope.OnlineUsers[index];
             $scope.ShowPrivateWindow = true;
             $scope.UserInPrivateChat = user;
-            console.log($scope.OnlineUsers);    +
+            console.log($scope.OnlineUsers);    
             $scope.$apply();
         };
+        $scope.usertyping = '';
+        signalR.IsTyping(function (connectionid, msg) {            
+            if ($scope.UserInPrivateChat.ConnectionId == connectionid)
+                $scope.usertyping = msg;
+            else
+                $scope.usertyping = '';
+            $scope.$apply();
+            window.setTimeout(function () {
+                $scope.usertyping = '';
+                $scope.$apply();
+            }, 500);
+        });
         signalR.StatusChanged(function (connectionId, status)
         {
             $.each($scope.OnlineUsers, function (i) {
@@ -119,6 +142,7 @@
             });
             // $scope.OnlineUsers.push(user);
             $scope.$apply();
+
         });
         signalR.RecievingPrivateMessage(function (toname,fromname, msg) {
            if ($scope.ShowPrivateWindow == false) {

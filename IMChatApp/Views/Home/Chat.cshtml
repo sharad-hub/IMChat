@@ -149,8 +149,12 @@
                                     </ul>
                                 </div>
                                 <div class="panel-footer">
+
+                                    <div>
+                                        {{usertyping}}
+                                    </div>
                                     <div class="input-group">
-                                        <input id="btn-input" type="text" class="form-control input-sm" ng-model="pvtmessage" placeholder="Type your message here..." />
+                                        <input id="btn-input" type="text" class="form-control input-sm" ng-model="pvtmessage" placeholder="Type your message here..." ng-keypress="SkeyPress($event)" />
                                         <span class="input-group-btn">
                                             <button class="btn btn-warning btn-sm" id="btn-chat" ng-click="SendPrivateMessage()">
                                                 Send

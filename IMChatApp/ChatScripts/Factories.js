@@ -22,6 +22,11 @@
                 $hub.server.updateStatus(status);
             });
         },
+        UserTyping: function (connectionid, msg) {
+            connection.done(function () {
+                $hub.server.userTyping(connectionid, msg);
+            });
+        },
         ////////////////////// CLIENT METHODS////////////////////            
         joinroom: function (callback) {
             $hub.client.joinroom = callback;
@@ -46,6 +51,9 @@
         },
         StatusChanged: function (callback) {
             $hub.client.statusChanged = callback;
+        },
+        IsTyping: function (callback) {
+            $hub.client.isTyping = callback;
         }
 
         

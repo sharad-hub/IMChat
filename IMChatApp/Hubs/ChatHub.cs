@@ -56,6 +56,11 @@ namespace IMChatApp.Hubs
             Clients.Others.statusChanged(userId,status);
             
         }
+        public void UserTyping(string connectionId, string msg)
+        {
+            var id = Context.ConnectionId;
+            Clients.Client(connectionId).isTyping(id, msg);
+        }
         public override System.Threading.Tasks.Task OnDisconnected(bool stopCalled)
         {
             var item = loggedInUsers.FirstOrDefault(x => x.ConnectionId == Context.ConnectionId);
