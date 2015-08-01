@@ -176,6 +176,7 @@
     <Content Include="Content\bootstrap.icons.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\image\login-bg.jpg" />
     <Content Include="Doc\chatScreen.PNG" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using IMChatApp.Models;
 
 namespace IMChatApp.Controllers
 {
@@ -14,11 +15,15 @@ namespace IMChatApp.Controllers
 
             return View();
         }
-        public ActionResult Chat()
+        public ActionResult Chat(Login model)
         {
-            ViewBag.Title = "Home Page";
-
-            return View();
+            if (ModelState.IsValid)
+            {
+                ViewBag.Title = "Home Page";
+                ViewBag.Username = model.UserNick;
+                return View();
+            }
+            return View("Index");
         }
     }
 }

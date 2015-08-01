@@ -3,7 +3,7 @@
     app.controller("chatController", function ($scope, $rootScope, signalR,Flash) {
     $scope.$parent.UserName = "";
     $scope.rooms = [];// RoomFactory.Rooms;
-    $scope.$parent.UserName = prompt("Enter unique name :");
+    $scope.$parent.UserName = $("h4#userNick").text();;  // prompt("Enter unique name :");
     signalR.startHub();  
     $scope.activeRoom = '';
     $scope.chatHistory = [];
