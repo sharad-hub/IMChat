@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>D:\PublishCodes\IMChat</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="Areas/HelpPage/HelpPage.css">
+      <publishTime>07/27/2015 23:10:44</publishTime>
+    </File>
+    <File Include="Areas/HelpPage/Views/Help/Api.cshtml">
+      <publishTime>07/27/2015 23:10:44</publishTime>
+    </File>
+    <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/ApiGroup.cshtml">
+      <publishTime>07/27/2015 23:10:44</publishTime>
+    </File>
+    <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/HelpPageApiModel.cshtml">
+      <publishTime>07/27/2015 23:10:44</publishTime>
+    </File>
+    <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/ImageSample.cshtml">
+      <publishTime>07/27/2015 23:10:44</publishTime>
+    </File>
+    <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/InvalidSample.cshtml">
+      <publishTime>07/27/2015 23:10:44</publishTime>
+    </File>
+    <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/Parameters.cshtml">
+      <publishTime>07/27/2015 23:10:44</publishTime>
+    </File>
+    <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/Samples.cshtml">
+      <publishTime>07/27/2015 23:10:44</publishTime>
+    </File>
+    <File Include="Areas/HelpPage/Views/Help/DisplayTemplates/TextSample.cshtml">
+      <publishTime>07/27/2015 23:10:44</publishTime>
+    </File>
+    <File Include="Areas/HelpPage/Views/Help/Index.cshtml">
+      <publishTime>07/27/2015 23:10:44</publishTime>
+    </File>
+    <File Include="Areas/HelpPage/Views/Shared/_Layout.cshtml">
+      <publishTime>07/27/2015 23:10:44</publishTime>
+    </File>
+    <File Include="Areas/HelpPage/Views/Web.config">
+      <publishTime>07/27/2015 23:10:44</publishTime>
+    </File>
+    <File Include="Areas/HelpPage/Views/_ViewStart.cshtml">
+      <publishTime>07/27/2015 23:10:21</publishTime>
+    </File>
+    <File Include="bin/Antlr3.Runtime.dll">
+      <publishTime>07/27/2015 23:10:45</publishTime>
+    </File>
+    <File Include="bin/IMChatApp.dll">
+      <publishTime>08/05/2015 00:56:31</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.SignalR.Core.dll">
+      <publishTime>04/18/2015 11:49:31</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.SignalR.SystemWeb.dll">
+      <publishTime>04/18/2015 11:49:31</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.dll">
+      <publishTime>04/18/2015 11:49:31</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Host.SystemWeb.dll">
+      <publishTime>04/18/2015 11:49:31</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.dll">
+      <publishTime>04/18/2015 11:49:31</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>07/27/2015 23:10:42</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>04/18/2015 11:49:31</publishTime>
+    </File>
+    <File Include="bin/Owin.dll">
+      <publishTime>07/27/2015 23:31:52</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>07/27/2015 23:10:42</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>07/27/2015 23:10:41</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>07/27/2015 23:10:42</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>07/27/2015 23:10:43</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>07/27/2015 23:10:42</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>07/27/2015 23:10:41</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>07/27/2015 23:10:41</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>07/27/2015 23:10:41</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>07/27/2015 23:10:41</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>07/27/2015 23:10:41</publishTime>
+    </File>
+    <File Include="bin/WebGrease.dll">
+      <publishTime>07/27/2015 23:10:45</publishTime>
+    </File>
+    <File Include="ChatScripts/angular.min.js">
+      <publishTime>07/27/2015 23:34:39</publishTime>
+    </File>
+    <File Include="ChatScripts/angular.min.js.map">
+      <publishTime>07/27/2015 23:34:39</publishTime>
+    </File>
+    <File Include="ChatScripts/App.js">
+      <publishTime>07/28/2015 00:51:49</publishTime>
+    </File>
+    <File Include="ChatScripts/Controlers.js">
+      <publishTime>08/04/2015 23:35:55</publishTime>
+    </File>
+    <File Include="ChatScripts/Factories.js">
+      <publishTime>08/04/2015 23:04:07</publishTime>
+    </File>
+    <File Include="Content/angular-flash.css">
+      <publishTime>07/29/2015 00:31:45</publishTime>
+    </File>
+    <File Include="Content/bootstrap.icons.css">
+      <publishTime>07/28/2015 01:18:55</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css">
+      <publishTime>07/27/2015 23:10:31</publishTime>
+    </File>
+    <File Include="Content/font-awesome.min.css">
+      <publishTime>07/29/2015 22:33:38</publishTime>
+    </File>
+    <File Include="Content/image/login-bg.jpg">
+      <publishTime>08/01/2015 22:17:28</publishTime>
+    </File>
+    <File Include="Content/Site.css">
+      <publishTime>08/04/2015 23:59:06</publishTime>
+    </File>
+    <File Include="Doc/chatScreen.PNG">
+      <publishTime>08/02/2015 10:33:47</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>07/27/2015 23:10:21</publishTime>
+    </File>
+    <File Include="fonts/fontawesome-webfont.eot">
+      <publishTime>07/29/2015 22:30:29</publishTime>
+    </File>
+    <File Include="fonts/fontawesome-webfont.svg">
+      <publishTime>07/29/2015 22:30:30</publishTime>
+    </File>
+    <File Include="fonts/fontawesome-webfont.ttf">
+      <publishTime>07/29/2015 22:30:30</publishTime>
+    </File>
+    <File Include="fonts/fontawesome-webfont.woff">
+      <publishTime>07/29/2015 22:30:30</publishTime>
+    </File>
+    <File Include="fonts/fontawesome-webfont.woff2">
+      <publishTime>07/29/2015 22:30:30</publishTime>
+    </File>
+    <File Include="fonts/FontAwesome.otf">
+      <publishTime>07/29/2015 22:30:29</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.eot">
+      <publishTime>07/27/2015 23:10:31</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.svg">
+      <publishTime>07/27/2015 23:10:31</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>07/27/2015 23:10:31</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff">
+      <publishTime>07/27/2015 23:10:31</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>07/27/2015 23:10:21</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>07/27/2015 23:31:55</publishTime>
+    </File>
+    <File Include="Scripts/angular-flash.js">
+      <publishTime>07/29/2015 00:31:28</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.js">
+      <publishTime>07/27/2015 23:10:31</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js">
+      <publishTime>07/27/2015 23:10:30</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.js">
+      <publishTime>07/27/2015 23:10:33</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.min.js">
+      <publishTime>07/27/2015 23:10:33</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.10.2.min.map">
+      <publishTime>07/27/2015 23:10:33</publishTime>
+    </File>
+    <File Include="Scripts/jquery.signalR-2.0.0.js">
+      <publishTime>07/27/2015 23:31:55</publishTime>
+    </File>
+    <File Include="Scripts/jquery.signalR-2.0.0.min.js">
+      <publishTime>07/27/2015 23:31:55</publishTime>
+    </File>
+    <File Include="Scripts/modernizr-2.6.2.js">
+      <publishTime>07/27/2015 23:10:44</publishTime>
+    </File>
+    <File Include="Scripts/respond.js">
+      <publishTime>07/27/2015 23:10:46</publishTime>
+    </File>
+    <File Include="Scripts/respond.min.js">
+      <publishTime>07/27/2015 23:10:46</publishTime>
+    </File>
+    <File Include="Scripts/_references.js">
+      <publishTime>08/01/2015 22:47:59</publishTime>
+    </File>
+    <File Include="Views/Home/Chat.cshtml">
+      <publishTime>08/04/2015 23:51:54</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>08/02/2015 10:19:59</publishTime>
+    </File>
+    <File Include="Views/Shared/Error.cshtml">
+      <publishTime>07/27/2015 23:10:21</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>08/04/2015 23:05:29</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>07/27/2015 23:10:21</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>07/27/2015 23:10:21</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>08/04/2015 00:19:20</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

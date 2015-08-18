@@ -1,0 +1,150 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/* styles for validation helpers */
+.field-validation-error {
+    color: #b94a48;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #b94a48;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #b94a48;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+/* Normal Case*/
+    .reveal .fa {
+        font-family: 'FontAwesome';
+        font-style: normal;
+    }
+    ul {
+        list-style:none;
+        padding-left:1px;
+    }
+    #PrivateChatArea {
+        z-index: 44;
+        max-height: 300px;
+        min-height: 300px;
+        width: 278px;
+        bottom: -2%;
+        position: fixed;
+        right: 170px;
+        opacity: 1;
+         display:none;
+    }
+
+    #OnlineUsers {
+        z-index: 88;
+        height: auto;
+        width: 181px;
+        bottom: -3%;
+        position: fixed;
+        right: 0%;
+        opacity: 1;
+    }
+.sender {
+    /*background-color:#00ff90!important;*/
+    min-height:15px!important;
+     min-width:15px!important;
+      color:#00ff90!important;
+}
+.reciver {
+    /*background-color:#0094ff!important;*/
+     min-height:15px!important;
+     color:#0094ff!important;
+     min-width:15px!important;
+}
+
+    .alertBox {
+        bottom: 0px;
+        right: 0px;
+        position: fixed;
+        z-index: 111;
+    }
+    h3.media-heading {
+        font-size:11px;
+        font-family:'Comic Sans MS';
+        float:left;
+    }
+
+@media screen and (min-width:280px) and (max-width:500px) {
+   .panel-heading {
+    padding: 6px 5px;
+    border-bottom: 1px solid transparent;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+}
+    .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 106px;
+    padding: 1px 0;
+    /* margin: 1px 0 0; */
+    font-size: 10px;
+    list-style: none;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0,0,0,0.15);
+    border-radius: 4px;
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,0.175);
+    /* box-shadow: 0 6px 12px rgba(0,0,0,0.175); */
+    /* background-clip: padding-box; */
+}
+
+     #PrivateChatArea {
+        z-index: 44;
+        max-height: 300px;
+        min-height: 300px;
+        width: 58%!important;
+        bottom: -2%;
+        position: fixed;
+        right: 40%!important;
+        opacity: 1;            
+    }
+    .chat-message {
+    font-size:10px!important;
+    font: normal normal normal normal 13.3333330154419px/normal Arial;
+    }
+    #OnlineUsers {
+        z-index: 88;
+        height: auto;
+        width: 40%!important;
+        bottom: -3%;
+        position: fixed;
+        right: 0%;
+        opacity: 1;
+    }
+}

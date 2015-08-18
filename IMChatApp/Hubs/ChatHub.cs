@@ -1,21 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using Microsoft.AspNet.SignalR;
 using IMChatApp.Models;
 using Microsoft.AspNet.SignalR.Hubs;
 using System.Diagnostics;
-using Newtonsoft;
+using System.Web.Security;
+using System.Web;
 
 namespace IMChatApp.Hubs
 {
     [HubName("chat")]
     public class ChatHub : Hub
     {
-        // ChatAppEntities db = new ChatAppEntities();
 
-        static bool isFirstRequest = true;
         public void say(string message)
         {
             Clients.All.hello();
@@ -24,9 +21,12 @@ namespace IMChatApp.Hubs
         static readonly HashSet<string> Rooms = new HashSet<string>();
         static List<user> loggedInUsers = new List<user>();
         //static List<Room> roomsWiseUser = new List<Room>();
+        
         public string Login(string name)
-        {           
-            var user = new user { name = name, ConnectionId = Context.ConnectionId, age = 20, avator = "", id = 1, sex = "Male", memberType = "Re+gistered", fontColor = "red", status = Status.Online.ToString() };
+        {
+            //FormsAuthentication.SetAuthCookie(Context.ConnectionId, false);
+            var a = HttpContext.Current.User.Identity.Name;
+            var user = new user { name = name, ConnectionId = Context.ConnectionId, ContextName =a,age = 20, avator = "", id = 1, sex = "Male", memberType = "Re+gistered", fontColor = "red", status = Status.Online.ToString() };
             Clients.Caller.rooms(Rooms.ToArray());
             Clients.Caller.setInitial(Context.ConnectionId, name);
             var oSerializer = new System.Web.Script.Serialization.JavaScriptSerializer();
@@ -37,16 +37,26 @@ namespace IMChatApp.Hubs
             return name;
         } 
 
-        public void SendPrivateMessage(string toUserId, string message)
+        public void SendPrivateMessage(string toUserId, string message,string name)
         {
+
             string fromUserId = Context.ConnectionId;
             var toUser = loggedInUsers.FirstOrDefault(x => x.ConnectionId == toUserId);
-            var fromUser = loggedInUsers.FirstOrDefault(x => x.ConnectionId == fromUserId);
-            if (toUser != null && fromUser != null)
-            {              
-                Clients.Client(toUserId).sendPrivateMessage(fromUserId, fromUser.name, message);
-                Clients.Caller.sendPrivateMessage(toUserId, fromUser.name, message);
+            if (toUser == null)
+            {
+                toUser = loggedInUsers.FirstOrDefault(x => x.name.Replace("!!","").Trim() == name.Replace("!!","").Trim());
+                if (toUser != null)
+                {
+                    Clients.Caller.updateConnectionId(toUserId, toUser.ConnectionId);
+                    toUserId = toUser.ConnectionId;
+                }
             }
+            var fromUser = loggedInUsers.FirstOrDefault(x => x.ConnectionId == fromUserId);           
+            if (toUser != null&&fromUser != null)
+            {
+                Clients.Client(toUserId).sendPrivateMessage(fromUserId, fromUser.name, message, fromUserId);
+                Clients.Caller.sendPrivateMessage(toUserId, fromUser.name, message, toUserId);
+            }                  
         }
         public void UpdateStatus(string status)
         {
@@ -58,8 +68,11 @@ namespace IMChatApp.Hubs
         }
         public void UserTyping(string connectionId, string msg)
         {
-            var id = Context.ConnectionId;
-            Clients.Client(connectionId).isTyping(id, msg);
+            if (connectionId != null)
+            {
+                var id = Context.ConnectionId;
+                Clients.Client(connectionId).isTyping(id, msg);
+            }
         }
         public override System.Threading.Tasks.Task OnDisconnected(bool stopCalled)
         {
@@ -70,7 +83,7 @@ namespace IMChatApp.Hubs
                 var id = Context.ConnectionId;            
                 Clients.Others.newOfflineUser(item);
             }
-            return base.OnDisconnected(true);
+            return base.OnDisconnected(false);
         }
         public void Connect(string userName)
         {

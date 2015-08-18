@@ -7,6 +7,7 @@ using IMChatApp.Models;
 
 namespace IMChatApp.Controllers
 {
+    
     public class HomeController : Controller
     {
         public ActionResult Index()
@@ -15,8 +16,10 @@ namespace IMChatApp.Controllers
 
             return View();
         }
-        public ActionResult Chat(Login model)
+        [Authorize]
+        public ActionResult Chat(LoginViewModel model)
         {
+         // HttpContext.Current.User.Identity.Name  
             if (ModelState.IsValid)
             {
                 ViewBag.Title = "Home Page";
